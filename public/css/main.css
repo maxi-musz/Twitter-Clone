@@ -156,7 +156,7 @@ button span {
 }
 
 #submitPostButton {
-    text-align: left;
+    left: 100%;
     background-color: var(--blue);
     color: white;
     border: none;
