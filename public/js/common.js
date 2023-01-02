@@ -407,7 +407,7 @@ function createPostHtml(postData, largeFont = false) {
         return console.log("User object not populated");
     }
 
-    var displayName = postedBy.firstName + " " + postedBy.lastName;
+    var displayName = postedBy.firstName.slice(0, 6) + "..";
     var timestamp = timeDifference(new Date(), new Date(postData.createdAt));
 
     var likeButtonActiveClass = postData.likes.includes(userLoggedIn._id) ? "active" : "";
@@ -510,29 +510,29 @@ function timeDifference(current, previous) {
     var elapsed = current - previous;
 
     if (elapsed < msPerMinute) {
-        if(elapsed/1000 < 30) return "Just now";
+        if(elapsed/1000 < 30) return "now";
         
-        return Math.round(elapsed/1000) + ' seconds ago';   
+        return Math.round(elapsed/1000) + 'secs';   
     }
 
     else if (elapsed < msPerHour) {
-         return Math.round(elapsed/msPerMinute) + ' minutes ago';   
+         return Math.round(elapsed/msPerMinute) + 'mins';   
     }
 
     else if (elapsed < msPerDay ) {
-         return Math.round(elapsed/msPerHour ) + ' hours ago';   
+         return Math.round(elapsed/msPerHour ) + 'hrs';   
     }
 
     else if (elapsed < msPerMonth) {
-        return Math.round(elapsed/msPerDay) + ' days ago';   
+        return Math.round(elapsed/msPerDay) + 'd';   
     }
 
     else if (elapsed < msPerYear) {
-        return Math.round(elapsed/msPerMonth) + ' months ago';   
+        return Math.round(elapsed/msPerMonth) + 'm';   
     }
 
     else {
-        return Math.round(elapsed/msPerYear ) + ' years ago';   
+        return Math.round(elapsed/msPerYear ) + 'yr';   
     }
 }
 
