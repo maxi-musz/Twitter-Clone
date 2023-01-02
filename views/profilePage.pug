@@ -38,9 +38,9 @@ block content
                         +createFollowButton(profileUser, true)
                     - else
                         +createFollowButton(profileUser, false)
-            
+
             .userDetailsContainer
-                span.displayName #{profileUser.firstName}
+                span.displayName #{profileUser.firstName} #{profileUser.lastName}
                 span.username @#{profileUser.username}
                 span.description #{profileUser.description}
 
