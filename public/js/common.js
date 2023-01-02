@@ -512,15 +512,15 @@ function timeDifference(current, previous) {
     if (elapsed < msPerMinute) {
         if(elapsed/1000 < 30) return "now";
         
-        return Math.round(elapsed/1000) + 'secs';   
+        return Math.round(elapsed/1000) + 's';   
     }
 
     else if (elapsed < msPerHour) {
-         return Math.round(elapsed/msPerMinute) + 'mins';   
+         return Math.round(elapsed/msPerMinute) + 'mi';   
     }
 
     else if (elapsed < msPerDay ) {
-         return Math.round(elapsed/msPerHour ) + 'hrs';   
+         return Math.round(elapsed/msPerHour ) + 'h';   
     }
 
     else if (elapsed < msPerMonth) {
